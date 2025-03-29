@@ -9,7 +9,6 @@ Your deployed website is accessible at:
 ---
 
 ## Steps to Deploy a Static Website on AWS
-
 ### 1. Create an S3 Bucket
 Create an S3 bucket to store your static website files.
 ```bash
