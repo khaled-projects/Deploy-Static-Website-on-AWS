@@ -12,7 +12,7 @@ https://d2f6xogq7yp8ia.cloudfront.net
 
 Create an S3 bucket to store your static website files.
 
-```
+```bash
 aws s3 mb s3://my-static-website --region us-east-1
 
 ```
@@ -21,7 +21,7 @@ Enable static website hosting on your S3 bucket:
 
 ```bash
 aws s3 website s3://my-static-website --index-document index.html
-
+```
 ### 3. Set Bucket Permissions
 Modify the bucket policy to allow public read access:
 
