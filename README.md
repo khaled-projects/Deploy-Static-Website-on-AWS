@@ -37,11 +37,14 @@ Modify the bucket policy to allow public read access:
     }
   ]
 }
+```
+
 ### 4. Configure CloudFront Distribution
 Create a CloudFront distribution for better performance and security.
 
 ```bash
 aws cloudfront create-distribution --origin-domain-name my-static-website.s3.amazonaws.com
+```
 
 Once the distribution is created, use the CloudFront Endpoint URL to access your website.
 
