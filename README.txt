@@ -3,7 +3,7 @@
 Welcome to the **Deploy Static Website on AWS** guide! This document provides step-by-step instructions to host a static website using AWS S3 and CloudFront.
 
 ## CloudFront Endpoint
-Your deployed website is accessible at:
+Your deployed website is accessible at:  
 **https://d2f6xogq7yp8ia.cloudfront.net**
 
 ---
@@ -14,20 +14,21 @@ Your deployed website is accessible at:
 Create an S3 bucket to store your static website files.
 ```bash
 aws s3 mb s3://my-static-website --region us-east-1
-```
-Enable static website hosting:
+
+## Enable static website hosting:
+
 ```bash
 aws s3 website s3://my-static-website --index-document index.html
-```
 
 ### 2. Upload Website Files to S3
 Copy your website files to the S3 bucket:
-```bash
+
+````bash
 aws s3 cp . s3://my-static-website --recursive
-```
 
 ### 3. Set Bucket Permissions
 Modify the bucket policy to allow public read access:
+
 ```json
 {
   "Version": "2012-10-17",
@@ -40,21 +41,16 @@ Modify the bucket policy to allow public read access:
     }
   ]
 }
-```
 
 ### 4. Configure CloudFront Distribution
 Create a CloudFront distribution for better performance and security.
+
 ```bash
 aws cloudfront create-distribution --origin-domain-name my-static-website.s3.amazonaws.com
-```
-Once the distribution is created, use the **CloudFront Endpoint URL** to access your website.
+Once the distribution is created, use the CloudFront Endpoint URL to access your website.
 
 ### 5. Test Your Website
 Open the following URL in your browser:
-**https://d2f6xogq7yp8ia.cloudfront.net**
+https://d2f6xogq7yp8ia.cloudfront.net
 
-Your static website is now live on AWS!
-
-
-
-
+### Your static website is now live on AWS!
