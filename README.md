@@ -12,19 +12,19 @@ https://d2f6xogq7yp8ia.cloudfront.net
 
 Create an S3 bucket to store your static website files.
 
-'''bash
+```bash
 aws s3 mb s3://my-static-website --region us-east-1
 
 ### 2. Enable Static Website Hosting
 Enable static website hosting on your S3 bucket:
 
-'''bash
+```bash
 aws s3 website s3://my-static-website --index-document index.html
 
 ### 3. Set Bucket Permissions
 Modify the bucket policy to allow public read access:
 
-json
+```json
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -39,7 +39,7 @@ json
 ### 4. Configure CloudFront Distribution
 Create a CloudFront distribution for better performance and security.
 
-'''bash
+```bash
 aws cloudfront create-distribution --origin-domain-name my-static-website.s3.amazonaws.com
 
 Once the distribution is created, use the CloudFront Endpoint URL to access your website.
