@@ -20,11 +20,11 @@ aws s3 mb s3://my-static-website --region us-east-1
 ```bash
 aws s3 website s3://my-static-website --index-document index.html
 
-### 2. Upload Website Files to S3
-Copy your website files to the S3 bucket:
+### 2. Enable Static Website Hosting
+Enable static website hosting on your S3 bucket:
 
 ```bash
-aws s3 cp . s3://my-static-website --recursive
+aws s3 website s3://my-static-website --index-document index.html
 
 ### 3. Set Bucket Permissions
 Modify the bucket policy to allow public read access:
